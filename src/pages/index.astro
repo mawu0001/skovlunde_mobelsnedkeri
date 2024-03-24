@@ -3,5 +3,62 @@ import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout titel="Forside">
-  <h1>skovlunde møbelsnedker</h1>
+  <section>
+    <div class="button">
+      <a href="galleri.html">VIS GALLERI</a>
+    </div>
+    <img
+      src="/public/img/IMG_20240118_103445.jpg"
+      alt="billede af køkken"
+      id="hero_img"
+    />
+  </section>
+  <section>
+    <h3>
+      Sammenlagt mere end 30 års erfaring indenfor design og produktion af
+      special-fremstillede inventar og køkken løsninger.
+    </h3>
+    <img src="/public/img/20201210_101037.jpg" alt="" class="secondary" />
+  </section>
+  <section>
+    <h3>
+      Vi er tre engagerede møbelsnedkere, der har en stor kærlighed for faget.
+      Vi elsker processen med, at benytte træ i sin grundform og forvandle det
+      til et vedvarende produkt/møbel som kan bevares i årtier.
+    </h3>
+    <img
+      src="/public/img/IMG_20210715_114611330.jpg"
+      alt=""
+      class="secondary"
+    />
+  </section>
 </MainLayout>
+
+<style>
+  section {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  img {
+    width: 100vw;
+  }
+  .button {
+    position: absolute;
+    padding: 20px;
+    background-color: white;
+    top: 40%;
+  }
+  a {
+    text-decoration: none;
+    font-family: var(--primaryfont);
+    font-weight: 500;
+    color: var(--black10);
+  }
+  .secondary {
+  }
+  h3 {
+    position: absolute;
+    max-width: 65ch;
+  }
+</style>
