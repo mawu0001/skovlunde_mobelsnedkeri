@@ -3,26 +3,28 @@ const { image, navn, data } = Astro.props;
 console.log(data);
 ---
 
-<div class="img_container">
-  <img src={data.img} alt="" />
-</div>
+<!-- <div class="img_container"> -->
+<img src={data.img} alt={data.navn} />
+<!-- </div> -->
 
 <style>
   .img_container {
-    width: 400px; /* Desired width */
-    height: 600px; /* Desired height */
-    overflow: hidden; /* Hide overflow */
-    position: relative; /* Required for absolute positioning */
+    display: flex;
+    flex-direction: row; /* Display content in a row */
+    align-items: center; /* Center items vertically */
+    flex-basis: calc((100% - 20px) / 3); /* Initial width of the card */
+    max-width: calc((100% - 20px) / 3); /* Maximum width of the card */
+    margin: 0 10px 10px 0; /* Margin between cards */
+    /* display: flex;
+    flex-direction: row;*/
+    flex-wrap: wrap; /*  Allow images to wrap to the next line if necessary */
   }
 
   img {
-    width: auto; /* Allow image to adjust width */
-    height: auto; /* Allow image to adjust height */
-    max-width: none; /* Disable max-width */
-    max-height: none; /* Disable max-height */
-    position: absolute; /* Position the image absolutely */
-    top: 50%; /* Move the image to the center vertically */
-    left: 50%; /* Move the image to the center horizontally */
-    transform: translate(-50%, -50%); /* Center the image */
+    width: 100%; /* Make sure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    align-items: center; /* Center items vertically */
+    flex-basis: calc((100% - 20px) / 3); /* Initial width of the card */
+    max-width: calc((100% - 20px) / 3); /* Maximum width of the card */
   }
 </style>

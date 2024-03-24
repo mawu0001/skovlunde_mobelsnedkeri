@@ -35,9 +35,14 @@ const data = await fetch(
 
   .images {
     display: flex;
+    flex-direction: row;
+    overflow: hidden;
     gap: 10px;
+    flex-wrap: wrap; /* Allow images to wrap to the next line if necessary */
+
+    /* display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; */
   }
 </style>
