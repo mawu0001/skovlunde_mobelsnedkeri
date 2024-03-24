@@ -4,14 +4,14 @@
 
 <header>
   <div class="logo">
-    <a href="/">
-      <img src="logo.png" alt="Logo" />
+    <a href="index.html">
+      <img src="../../public/img/logo/logo_sort.svg" alt="Logo" />
     </a>
   </div>
   <nav>
     <ul class="menu">
-      <li><a href="#">Galleri</a></li>
-      <li><a href="#">Kontakt Os</a></li>
+      <li><a href="galleri.html">Galleri</a></li>
+      <li><a href="kontaktos.html">Kontakt Os</a></li>
     </ul>
     <div class="burger">
       <div class="line"></div>
@@ -26,13 +26,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color:;
+    padding: 10px 40px;
+    background-color: grey;
   }
 
   .logo img {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
   }
 
   nav {
@@ -62,10 +62,10 @@
     text-decoration: none;
     transition: color 0.3s;
     text-align: end;
+    font-family: var(--primaryfont);
   }
 
   .menu a:hover {
-    color: #f00;
   }
 
   .burger {
@@ -113,7 +113,6 @@
       top: 60px;
       left: 0;
       width: 100%;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       z-index: 1;
     }
 
