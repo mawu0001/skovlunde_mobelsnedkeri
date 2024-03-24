@@ -7,18 +7,22 @@ import MainLayout from "../layouts/MainLayout.astro";
     <div class="button">
       <a href="galleri.html">VIS GALLERI</a>
     </div>
-    <img
-      src="/public/img/IMG_20240118_103445.jpg"
-      alt="billede af køkken"
-      id="hero_img"
-    />
+    <div id="hero_container">
+      <img
+        src="/img/IMG_20240118_1034452.jpg"
+        alt="billede af køkken"
+        id="hero_img"
+      />
+    </div>
   </section>
   <section>
     <h3>
       Sammenlagt mere end 30 års erfaring indenfor design og produktion af
       special-fremstillede inventar og køkken løsninger.
     </h3>
-    <img src="/public/img/20201210_101037.jpg" alt="" class="secondary" />
+    <div class="opacity">
+      <img src="/img/20201210_1010372.jpg" alt="" class="secondary" />
+    </div>
   </section>
   <section>
     <h3>
@@ -26,11 +30,7 @@ import MainLayout from "../layouts/MainLayout.astro";
       Vi elsker processen med, at benytte træ i sin grundform og forvandle det
       til et vedvarende produkt/møbel som kan bevares i årtier.
     </h3>
-    <img
-      src="/public/img/IMG_20210715_114611330.jpg"
-      alt=""
-      class="secondary"
-    />
+    <img src="/img/IMG_20210715_1146113302.jpg" alt="" class="secondary" />
   </section>
 </MainLayout>
 
@@ -40,25 +40,36 @@ import MainLayout from "../layouts/MainLayout.astro";
     justify-content: center;
     position: relative;
   }
-  img {
+
+  #hero_img {
     width: 100vw;
+    height: auto;
   }
   .button {
     position: absolute;
     padding: 20px;
     background-color: white;
+    opacity: 70%;
     top: 40%;
   }
   a {
     text-decoration: none;
     font-family: var(--primaryfont);
     font-weight: 500;
-    color: var(--green10);
+    color: var(--green70);
+    z-index: 10;
   }
   .secondary {
+    width: 100vw;
+  }
+  .opacity {
+    opacity: 40%;
   }
   h3 {
     position: absolute;
     max-width: 65ch;
+    z-index: 15;
+    top: 20%;
+    text-align: center;
   }
 </style>
