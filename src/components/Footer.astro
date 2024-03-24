@@ -1,6 +1,6 @@
 ---
-import Instagram from "./Instagram.astro"
-import Facebook from  "./Facebook.astro"
+import Instagram from "./Instagram.astro";
+import Facebook from "./Facebook.astro";
 ---
 
 <footer>
@@ -9,19 +9,23 @@ import Facebook from  "./Facebook.astro"
     <a href="kontaktos.html">Kontakt Os</a>
   </section>
   <section>
-    <a href="https://facebook.com/skovlundemoebelsnedkeri"><Facebook/></a>
-    <a href="https://instagram.com/skovlundemoebelsnedkeri"><Instagram/></a>
+    <a href="https://facebook.com/skovlundemoebelsnedkeri"><Facebook /></a>
+    <a href="https://instagram.com/skovlundemoebelsnedkeri"><Instagram /></a>
   </section>
 </footer>
 
 <style>
+  footer {
+    background-color: var(--green70);
+    height: 200px;
+  }
   section {
     display: flex;
     justify-content: center;
   }
   section a {
     padding: 10px;
-    color: #333;
+    color: var(--green10);
     text-decoration: none;
     transition: color 0.3s;
     font-family: var(--primaryfont);

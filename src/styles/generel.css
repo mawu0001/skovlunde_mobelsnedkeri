@@ -1,6 +1,14 @@
 :root {
   --primaryfont: "Montserrat", sans-serif;
-  --black10: #171717;
+  --green10: #f5f3f0;
+  --green20: #eae7dd;
+  --green30: #d7d2bf;
+  --green40: #bdb699;
+  --green50: #a49c77;
+  --green60: #76704c;
+  --green70: #535038;
+  --green80: #3c3b2b;
+  --green90: #171717;
 }
 * {
   box-sizing: border-box;
@@ -14,8 +22,9 @@ img {
 }
 
 body {
-  color: var(--black10);
+  color: var(--green90);
   font-family: var(--primaryfont);
+  background-color: var(--green10);
 }
 main {
   margin: 50px;
