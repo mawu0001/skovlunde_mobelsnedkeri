@@ -2,32 +2,38 @@
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<MainLayout titel="Forside">
-  <h1>Kontakt Os</h1>
-  <section>
-    <img src="/img/IMG_0836.jpg" alt="" id="hero_kontakt" />
-  </section>
-  <div id="container_1_1">
-    <article>
-      <h3>Kontakt os:</h3>
-      <div class="kontakt_container">
-        <img src="/img/svg/map.svg" alt="map icon" class="icons" />
-        <p>
-          Skovlunde Møbelsnedkeri, Meterbuen 6 B, <br /> 2740 Skovlunde, Denmark
-        </p>
-      </div>
-      <div class="kontakt_container">
-        <img src="/img/svg/mail.svg" alt=" mail icon" class="icons" />
-        <p>felix@skovlunde-ms.dk</p>
-      </div>
-      <div class="kontakt_container">
-        <img src="/img/svg/telefon.svg" alt=" telefon icon" class="icons" />
-        <p>+45 30 13 41 69</p>
-      </div>
-    </article>
-    <article></article>
+<MainLayout titel="Kontakt Os">
+  <div class="container">
+    <h1>Kontakt Os</h1>
+    <section>
+      <img src="/img/023.jpg" alt="" id="hero_kontakt" />
+    </section>
+    <div id="container_1_1">
+      <article>
+        <h3>Kontakt os:</h3>
+        <div class="kontakt_container">
+          <img src="/img/svg/map.svg" alt="map icon" class="icons" />
+          <p>
+            Skovlunde Møbelsnedkeri, Meterbuen 6 B, <br /> 2740 Skovlunde, Denmark
+          </p>
+        </div>
+        <div class="kontakt_container">
+          <img src="/img/svg/mail.svg" alt=" mail icon" class="icons" />
+          <p>felix@skovlunde-ms.dk</p>
+        </div>
+        <div class="kontakt_container">
+          <img src="/img/svg/telefon.svg" alt=" telefon icon" class="icons" />
+          <p>+45 30 13 41 69</p>
+        </div>
+      </article>
+      <article></article>
+    </div>
   </div>
   <style>
+    .container {
+      margin: 50px;
+      padding: 100px;
+    }
     section {
       display: flex;
       justify-content: center;
