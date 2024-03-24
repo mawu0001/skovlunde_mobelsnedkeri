@@ -1,5 +1,6 @@
 ---
-
+import Navigation from "../components/Navigation.astro";
+const { titel } = Astro.props;
 ---
 
 <html lang="en">
@@ -11,6 +12,10 @@
     <title>Astro</title>
   </head>
   <body>
-    <h1>Astro</h1>
+    <Navigation />
+    <main>
+      <h1>{titel}</h1>
+      <slot />
+    </main>
   </body>
 </html>
