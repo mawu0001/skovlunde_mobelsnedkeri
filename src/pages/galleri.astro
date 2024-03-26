@@ -1,43 +1,41 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import ImgCard from "../components/ImgCard.astro";
-
-const data = await fetch(
-  "https://vqnwxfvyyssfbfvdjnfg.supabase.co/rest/v1/galleri",
-  {
-    method: "GET",
-    headers: {
-      apikey:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZxbnd4ZnZ5eXNzZmJmdmRqbmZnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTEyOTUwMzYsImV4cCI6MjAyNjg3MTAzNn0.A7Sj5u9pf_S-ewZ9LOxpw-AXq14DIAsxqOZR5iHOHfM",
-    },
-  }
-).then((res) => res.json());
 ---
 
 <MainLayout titel="Galleri">
   <div class="container">
-    <h1>Galleri</h1>
+    <div class="heading">
+      <h1>Galleri</h1>
+    </div>
+    <ImgCard />
   </div>
-  <section class="images">
-    {
-      data.map((show) => {
-        return <ImgCard data={show} />;
-      })
-    }
-  </section>
 </MainLayout>
 
 <style>
   .container {
-    margin: 50px;
-    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 20px 0 20px;
+    text-align: left;
   }
 
-  .images {
+  .container .heading {
+    padding: 20px;
+  }
+  .container .heading h1 {
+  }
+  .container .box {
     display: flex;
-    gap: 10px;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
+  }
+  .container .box .images {
+    display: flex;
+    flex-direction: column;
+    width: 32.5%;
+    gap: 15px;
   }
 </style>

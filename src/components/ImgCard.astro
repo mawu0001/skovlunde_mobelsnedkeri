@@ -1,28 +1,65 @@
 ---
-const { image, navn, data } = Astro.props;
-console.log(data);
+
 ---
 
-<div class="img_container">
-  <img src={data.img} alt="" />
+<div class="box">
+  <div class="images" id="container1"></div>
+  <div class="images" id="container2"></div>
+  <div class="images" id="container3"></div>
 </div>
 
 <style>
-  .img_container {
-    width: 400px; /* Desired width */
-    height: 600px; /* Desired height */
-    overflow: hidden; /* Hide overflow */
-    position: relative; /* Required for absolute positioning */
+  .box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .box .images {
+    display: flex;
+    flex-direction: column;
+    width: 32.5%;
+    gap: 15px;
   }
 
   img {
-    width: auto; /* Allow image to adjust width */
-    height: auto; /* Allow image to adjust height */
-    max-width: none; /* Disable max-width */
-    max-height: none; /* Disable max-height */
-    position: absolute; /* Position the image absolutely */
-    top: 50%; /* Move the image to the center vertically */
-    left: 50%; /* Move the image to the center horizontally */
-    transform: translate(-50%, -50%); /* Center the image */
+    width: 100%;
+    border-radius: 15px;
   }
 </style>
+
+<script>
+  const fetchData = async () => {
+    const response = await fetch(
+      "https://vqnwxfvyyssfbfvdjnfg.supabase.co/rest/v1/galleri",
+      {
+        method: "GET",
+        headers: {
+          apikey:
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZxbnd4ZnZ5eXNzZmJmdmRqbmZnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTEyOTUwMzYsImV4cCI6MjAyNjg3MTAzNn0.A7Sj5u9pf_S-ewZ9LOxpw-AXq14DIAsxqOZR5iHOHfM",
+        },
+      }
+    );
+    return response.json(); // Return the promise
+  };
+
+  const distributeImages = async () => {
+    const data = await fetchData();
+    const container1 = document.getElementById("container1");
+    const container2 = document.getElementById("container2");
+    const container3 = document.getElementById("container3");
+    const containers = [container1, container2, container3];
+    let containerIndex = 0;
+
+    data.forEach((imageData) => {
+      const imgElement = document.createElement("img");
+      imgElement.src = imageData.img;
+      imgElement.alt = imageData.navn;
+
+      containers[containerIndex].appendChild(imgElement);
+      containerIndex = (containerIndex + 1) % 3;
+    });
+  };
+
+  distributeImages();
+</script>
