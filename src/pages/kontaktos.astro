@@ -4,7 +4,9 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 <MainLayout titel="Kontakt Os">
   <div class="container">
-    <h1>Kontakt Os</h1>
+    <div class="heading">
+      <h1>Kontakt Os</h1>
+    </div>
     <section>
       <img src="/img/023.jpg" alt="" id="hero_kontakt" />
     </section>
@@ -29,34 +31,42 @@ import MainLayout from "../layouts/MainLayout.astro";
       <article></article>
     </div>
   </div>
-  <style>
-    .container {
-      margin: 50px;
-      padding: 100px;
-    }
-    section {
-      display: flex;
-      justify-content: center;
-    }
-    #hero_kontakt {
-      width: 100vw;
-    }
-
-    #container_1_1 {
-      padding-top: 50px;
-    }
-    .icons {
-      width: 20px;
-    }
-    .kontakt_container {
-      display: grid;
-      gap: 10px;
-      justify-content: left;
-      /* height: 60px; */
-      margin: 40px 0;
-    }
-    p {
-      grid-column: 2;
-    }
-  </style>
 </MainLayout>
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    margin: 40px 40px 0 40px;
+    text-align: left;
+  }
+
+  .container .heading {
+    padding: 20px;
+  }
+  section {
+    display: flex;
+    justify-content: center;
+  }
+  #hero_kontakt {
+    width: 100vw;
+  }
+
+  #container_1_1 {
+    padding-top: 50px;
+  }
+  .icons {
+    width: 20px;
+  }
+  .kontakt_container {
+    display: grid;
+    gap: 10px;
+    justify-content: left;
+    /* height: 60px; */
+    margin: 40px 0;
+  }
+  p {
+    grid-column: 2;
+  }
+</style>

@@ -1,0 +1,99 @@
+---
+
+---
+
+<style>
+  /* Basic styling for the form */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  textarea {
+    height: 100px;
+  }
+
+  button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .success-message {
+    color: green;
+    font-weight: bold;
+  }
+</style>
+
+<body>
+  <form id="contactForm">
+    <label for="name">Your Name:</label><br />
+    <input type="text" id="name" name="name" required /><br />
+
+    <label for="email">Your Email:</label><br />
+    <input type="email" id="email" name="email" required /><br />
+
+    <label for="message">Message:</label><br />
+    <textarea id="message" name="message" required></textarea><br />
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <div id="successMessage" class="success-message" style="display: none;">
+    Message sent successfully!
+  </div>
+
+  <script>
+    document
+      .getElementById("contactForm")
+      .addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Get form data
+        var formData = new FormData(this);
+
+        // Display success message
+        document.getElementById("successMessage").style.display = "block";
+
+        // Optionally, you can send the form data to a server using AJAX for further processing
+        // For example:
+        // var xhr = new XMLHttpRequest();
+        // xhr.open('POST', 'send_email.php', true);
+        // xhr.onload = function() {
+        //   if (xhr.status === 200) {
+        //     // Display success message or handle response from server
+        //   } else {
+        //     // Handle error
+        //   }
+        // };
+        // xhr.send(formData);
+      });
+  </script>
+</body>
