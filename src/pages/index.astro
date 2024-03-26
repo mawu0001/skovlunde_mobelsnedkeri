@@ -4,9 +4,12 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 <MainLayout titel="Forside" overskrift="">
   <section>
-    <div class="button">
-      <a href="galleri.html">VIS GALLERI</a>
+    <div id="hero_logo">
+      <img src="/public/img/logo/logo_hvid.svg" alt="logo" id="logo_img" />
     </div>
+    <!-- <div class="button">
+      <a href="galleri.html">VIS GALLERI</a>
+    </div> -->
     <div id="hero_container">
       <img src="/img/055.jpg" alt="billede af køkken" id="hero_img" />
     </div>
@@ -41,13 +44,22 @@ import MainLayout from "../layouts/MainLayout.astro";
     width: 100vw;
     height: auto;
   }
-  .button {
+  /* .button {
     position: absolute;
     padding: 20px;
     background-color: white;
     opacity: 70%;
     top: 40%;
+  } */
+  #hero_logo {
+    position: absolute;
+    z-index: 100;
+    top: 40%;
+    width: 200px;
+    background-color: var(--green80);
+    opacity: 42%;
   }
+
   a {
     text-decoration: none;
     font-family: var(--primaryfont);

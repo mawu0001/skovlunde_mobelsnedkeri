@@ -5,11 +5,13 @@
 <header>
   <div class="logo">
     <a href="index.html">
-      <img src="/img/logo/logo_sort.svg" alt="Logo" />
+      <img src="/img/logo/logo_hvid.svg" alt="Logo" id="logo_img" />
     </a>
+    <a href="index.html">SKOVLUNDE <br /> MØBELSNEDKERI</a>
   </div>
   <nav>
     <ul class="menu">
+      <li><a href="index.html">Hjem</a></li>
       <li><a href="galleri.html">Galleri</a></li>
       <li><a href="kontaktos.html">Kontakt Os</a></li>
     </ul>
@@ -27,9 +29,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 40px;
-    background-color: var(--green30);
+    background-color: var(--green50);
     width: 100vw;
-    position: fixed;
     top: 0%;
     z-index: 1000;
   }
@@ -38,10 +39,22 @@
     width: 100px;
     height: 100px;
   }
+  .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
 
   nav {
     display: flex;
     align-items: center;
+    background-color: var(--green50);
+    position: fixed;
+    border-radius: 2rem;
+    z-index: 1000;
+    right: 5%;
+    padding: 0.5rem;
   }
 
   .menu {
@@ -62,13 +75,23 @@
   .menu a {
     display: block;
     padding: 10px;
-    color: #333;
+    color: var(--green10);
     text-decoration: none;
     transition: color 0.3s;
     text-align: end;
     font-family: var(--primaryfont);
+    font-weight: 600;
+  }
+  .logo a {
+    color: var(--green10);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.5rem;
   }
 
+  #logo_img {
+    background-color: var(--green80);
+  }
   .menu a:hover {
   }
 
