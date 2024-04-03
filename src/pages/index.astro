@@ -2,7 +2,7 @@
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<MainLayout titel="Forside" overskrift="">
+<MainLayout titel="Forside">
   <section>
     <div id="hero_logo">
       <img src="/img/logo/logo_hvid.svg" alt="logo" id="logo_img" />
@@ -14,22 +14,27 @@ import MainLayout from "../layouts/MainLayout.astro";
       <img src="/img/055.jpg" alt="billede af køkken" id="hero_img" />
     </div>
   </section>
+
   <section>
-    <h3>
-      Sammenlagt mere end 30 års erfaring indenfor design og produktion af
-      special-fremstillede inventar og køkken løsninger.
-    </h3>
-    <div class="opacity">
-      <img src="/img/007.jpg" alt="" class="secondary" />
+    <div>
+      <h3>
+        Vi er tre engagerede møbelsnedkere, der har en stor kærlighed for faget.
+        Vi elsker processen med, at benytte træ i sin grundform og forvandle det
+        til et vedvarende produkt/møbel som kan bevares i årtier.
+      </h3>
     </div>
+    <img src="/img/039.jpg" alt="" id="indeximg1" />
   </section>
   <section>
-    <h3>
-      Vi er tre engagerede møbelsnedkere, der har en stor kærlighed for faget.
-      Vi elsker processen med, at benytte træ i sin grundform og forvandle det
-      til et vedvarende produkt/møbel som kan bevares i årtier.
-    </h3>
-    <img src="/img/050.jpg" alt="" class="secondary" />
+    <div id="indeximg2">
+      <img src="/img/006.jpg" alt="" />
+    </div>
+    <div>
+      <h3>
+        Sammenlagt mere end 30 års erfaring indenfor design og produktion af
+        special-fremstillede inventar og køkken løsninger.
+      </h3>
+    </div>
   </section>
 </MainLayout>
 
@@ -44,13 +49,6 @@ import MainLayout from "../layouts/MainLayout.astro";
     width: 100vw;
     height: auto;
   }
-  /* .button {
-    position: absolute;
-    padding: 20px;
-    background-color: white;
-    opacity: 70%;
-    top: 40%;
-  } */
 
   #hero_logo {
     position: absolute;
@@ -81,14 +79,19 @@ import MainLayout from "../layouts/MainLayout.astro";
     color: var(--green70);
     z-index: 10;
   }
-  .secondary {
-    width: 100vw;
+
+  #indeximg1 {
+    width: 50%;
+    height: auto;
+    border-radius: 30px;
   }
-  .opacity {
-    opacity: 40%;
+  #indeximg2 {
+    width: 30rem;
+    height: 30rem;
+    border-radius: 30px;
+    overflow: hidden;
   }
   h3 {
-    position: absolute;
     max-width: 65ch;
     z-index: 15;
     top: 20%;
