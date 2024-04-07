@@ -27,6 +27,11 @@ body {
   background-color: var(--green10);
 }
 main {
-  margin: 0 50px;
-  padding: 0 70px;
+  margin: 0 3%;
+  padding: 0 4%;
+}
+
+p {
+  font-size: 32px;
+  font-weight: 400;
 }
