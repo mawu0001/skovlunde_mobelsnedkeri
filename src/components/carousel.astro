@@ -1,0 +1,59 @@
+---
+const data = await fetch(
+  "https://vqnwxfvyyssfbfvdjnfg.supabase.co/rest/v1/galleri",
+  {
+    method: "GET",
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZxbnd4ZnZ5eXNzZmJmdmRqbmZnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTEyOTUwMzYsImV4cCI6MjAyNjg3MTAzNn0.A7Sj5u9pf_S-ewZ9LOxpw-AXq14DIAsxqOZR5iHOHfM",
+    },
+  }
+).then((res) => res.json());
+
+console.log(data);
+---
+
+<a href="galleri.html">Se hele vores galleri <span>&#x279C;</span></a>
+<a href="galleri.html">
+  <div class="carousel">
+    {
+      data.map((data) => {
+        return <img src={data.img} alt={data.navn} class="images" />;
+      })
+    }
+  </div></a
+>
+
+<style>
+  a,
+  span {
+    font-size: 24px;
+    text-decoration: none;
+    color: var(--green90);
+    font-weight: 600;
+  }
+  .images {
+    width: auto;
+    height: 400px;
+    border-radius: 30px;
+  }
+  .carousel {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    /* Set a minimum width to ensure horizontal scrolling */
+    min-width: 100%;
+    /* Allow items to wrap if they exceed container width */
+    flex-wrap: nowrap;
+    border-radius: 30px;
+    margin: 30px 0 70px 0;
+  }
+
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+</style>
