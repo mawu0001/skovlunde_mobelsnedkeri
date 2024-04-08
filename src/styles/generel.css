@@ -24,7 +24,7 @@ img {
 body {
   color: var(--green90);
   font-family: var(--primaryfont);
-  background-color: var(--green10);
+  background-color: var(--green20);
 }
 main {
   margin: 0 3%;

@@ -2,24 +2,66 @@
 
 ---
 
-<form name="kontakt" netlify>
-  <div>
-    <div class="navn">
-      <label for="full-name"> NAVN: </label>
-      <input id="full-name" name="fname" type="text" required />
-    </div>
-  </div>
-
-  <div class="email">
-    <label for="email"> EMAIL: </label>
-    <input id="email2" name="email" type="email" required />
-  </div>
-  <div class="besked">
-    <label id="besked" for="besked">
-      BESKED:
-      <textarea name="besked" rows="20" cols="129"></textarea>
+<form name="contact" method="POST" netlify>
+  <h3>Send en forspørgsel hvis i allerede har en idé til et projekt</h3>
+  <p>
+    <label>Navn: <input type="text" name="name" /></label>
+  </p>
+  <p>
+    <label>Email: <input type="email" name="email" /></label>
+  </p>
+  <p>
+    <label>Besked: <textarea name="message"></textarea></label>
+  </p>
+<p>
+    <label>
+      <span>Tilføj filer:</span> <br> <span id="mini">filerne må max være 8MB</span>
+      <div id="fil_container">
+      <input name="file" type="file" class="fil_input"/>
+      <input name="file" type="file" class="fil_input"/>
+      <input name="file" type="file" class="fil_input"/>
+      </div>
     </label>
-  </div>
-
-  <button>INDSEND</button>
+  </p>
+  <p>
+    <button type="submit">Send</button>
+  </p>
 </form>
+
+<style>
+p{
+  font-size: 20px;
+}
+#mini{
+  font-size: 10px;
+}
+form{
+  max-width: 400px;
+}
+input, textarea{
+  margin-top: 0.2rem;
+  margin-bottom: 0.8rem;
+  border: none;
+  background-color: var(--green10);
+  padding: 5px;
+  border-radius: 30px;
+  width: 400px;
+}
+textarea{
+  padding: 50px;
+}
+#fil_container{
+  display: flex;
+  flex-direction: column;
+}
+.fil_input{
+  background-color: transparent;
+}
+button{
+  border: none;
+  border-radius: 30px;
+opacity: 0.5;
+background: var(--farve-green40, #BDB699);
+padding: 10px 20px;
+}
+</style>

@@ -5,71 +5,76 @@ import Contact from "../components/Contact.astro";
 
 <MainLayout titel="Kontakt Os">
   <div class="container">
-    <div class="heading">
-      <h1>Kontakt Os</h1>
-    </div>
-    <section>
-      <img src="/img/023.jpg" alt="" id="hero_kontakt" />
-    </section>
-    <div id="container_1_1">
-      <article>
-        <h3>Kontakt os:</h3>
-        <div class="kontakt_container">
-          <img src="/img/svg/map.svg" alt="map icon" class="icons" />
-          <p>
-            Skovlunde Møbelsnedkeri, Meterbuen 6 B, <br /> 2740 Skovlunde, Denmark
-          </p>
-        </div>
-        <div class="kontakt_container">
-          <img src="/img/svg/mail.svg" alt=" mail icon" class="icons" />
-          <p>felix@skovlunde-ms.dk</p>
-        </div>
-        <div class="kontakt_container">
-          <img src="/img/svg/telefon.svg" alt=" telefon icon" class="icons" />
-          <p>+45 30 13 41 69</p>
-        </div>
-      </article>
-      <article>
-        <Contact />
-      </article>
-    </div>
+    <h2>Kontakt os</h2>
+    <article id="kontakt_info">
+      <div class="kontakt_container">
+        <img src="/img/svg/map.svg" alt="map icon" class="icons" />
+        <p>
+          Meterbuen 6 B, <br /> 2740 Skovlunde, Denmark
+        </p>
+      </div>
+      <div class="kontakt_container">
+        <img src="/img/svg/mail.svg" alt=" mail icon" class="icons" />
+        <p>felix@skovlunde-ms.dk</p>
+      </div>
+      <div class="kontakt_container">
+        <img src="/img/svg/telefon.svg" alt=" telefon icon" class="icons" />
+        <p>+45 30 13 41 69</p>
+      </div>
+    </article>
+    <article id="kontakt_form">
+      <Contact />
+    </article>
   </div>
 </MainLayout>
 <style>
   .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     /* align-items: center; */
-    margin: 40px 40px 0 40px;
+    margin: 40px 40px 40px 40px;
     text-align: left;
-  }
-
-  .container .heading {
     padding: 20px;
   }
-  section {
-    display: flex;
-    justify-content: center;
+  h2 {
+    grid-row: 1;
+    padding: 30px 10px;
   }
-  #hero_kontakt {
-    width: 100vw;
+
+  #kontakt_info {
+    grid-row: 2;
+    background-color: var(--green60);
+    border-radius: 30px;
+    width: fit-content;
+    padding: 35px;
+    height: fit-content;
+  }
+  #kontakt_form {
+    grid-row: 2;
+    grid-column: 2;
   }
 
   #container_1_1 {
     padding-top: 50px;
   }
   .icons {
-    width: 20px;
+    width: 40px;
+    background-color: var(--green50);
+    border-radius: 30px;
+    padding: 5px 7px;
+    height: 40px;
   }
   .kontakt_container {
-    display: grid;
+    display: flex;
     gap: 10px;
     justify-content: left;
-    /* height: 60px; */
-    margin: 40px 0;
+    flex-direction: row;
+    align-items: center;
   }
   p {
     grid-column: 2;
+    font-size: 20px;
+    color: var(--green10);
+    padding: 20px 40px;
   }
 </style>
