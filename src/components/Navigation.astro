@@ -97,8 +97,9 @@
 
   .burger {
     width: 30px;
-    height: 20px;
+    height: 30px;
     cursor: pointer;
+    padding: 5px 2px;
   }
 
   .burger .line {
@@ -112,11 +113,15 @@
     display: none;
   }
   @media screen and (max-width: 800px) {
+    .logo a {
+      font-size: 1rem;
+    }
     .menu {
       display: none;
     }
     .burger {
       display: block;
+      z-index: 10;
     }
     .burger.active .line:nth-child(1) {
       transform: rotate(45deg) translate(5px, 5px);
@@ -135,12 +140,14 @@
 
     nav.active .menu {
       display: block;
-      background-color: #fff;
+      background-color: var(--green40);
       position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
+      top: -80%;
+      right: -45%;
+      width: 380px;
       z-index: 1;
+      height: 300px;
+      padding-top: 90px;
     }
 
     nav.active .menu li {
